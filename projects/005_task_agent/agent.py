@@ -10,7 +10,7 @@ init_db()
 
 ## agent = llm, tools, system_prompt, user
 
-llm = ChatOpenRouter(model="qwen/qwen3.8-27b")
+llm = ChatOpenRouter(model="qwen/qwen3.8-27b", max_tokens=2048)
 
 all_tools = [create_todo, list_todos, update_todos, delete_todo]
 
@@ -42,12 +42,12 @@ Priority values: low | medium | high
 """
 
 
-memery = InMemorySaver()
+memory = InMemorySaver()
 
 
 def createAgent():
     agent = create_agent(
-        model=llm, tools=all_tools, system_prompt=SYSTEM_PROMPT, checkpointer=memery
+        model=llm, tools=all_tools, system_prompt=SYSTEM_PROMPT, checkpointer=memory
     )
     return agent
 
