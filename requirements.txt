@@ -1,0 +1,13 @@
+langchain
+langchain-groq
+langgraph
+dotenv
+ipykernel
+pandas
+langchain-openrouter
+pydantic
+langchain-deepseek #also installs langchain-openai automatically
+langchain-meta
+streamlit
+langchain-nimble
+# Install every provider's langchain package to be used by you 
