@@ -14,5 +14,3 @@ __pycache__/
 # Local SQLite databases (from 005_task_agent)
 *.db
 
-# Project PDFs / documentation artifacts
-*.pdf
