@@ -49,7 +49,8 @@ streamlit run projects/001_QNA_BOT/app.py
 streamlit run projects/002_Blog_bot/app.py
 streamlit run "projects/003_weather+Search_Agent/app.py"
 streamlit run projects/004_email_agent/app.py
-streamlit run projects/005_task_agent/app.py
+cd projects/005_task_agent #due to sqlite db creation in workspace
+streamlit run app.py
 ```
 
 Each command starts one app; open the local URL printed by Streamlit. The task agent creates `todos.db` in the working directory when it first runs.

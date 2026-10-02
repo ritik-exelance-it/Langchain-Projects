@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.orm import DeclarativeBase, sessionmaker
 
-DATABASE_URL = "sqlite:///todos.db"  ### PGsQL,
+DATABASE_URL = "sqlite:///./todos.db"  ### PGsQL,
 
 engine = create_engine(DATABASE_URL)
 LocalSession = sessionmaker(bind=engine)
