@@ -31,8 +31,15 @@ def weather_tool(city:str):
             city - city name for weather details
         Return -> Weather data from the api response.
     """
-    API_URL = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={os.getenv("WEATHR_API_KEY")}"
-    res = requests.get(API_URL)
+    api_key = os.getenv("OPENWEATHERMAP_API_KEY")
+    if not api_key:
+        return "OpenWeatherMap is not configured. Set OPENWEATHERMAP_API_KEY in .env."
+
+    res = requests.get(
+        "https://api.openweathermap.org/data/2.5/weather",
+        params={"q": city, "appid": api_key},
+        timeout=10,
+    )
     if res.status_code == 200:
         return res.json()
     
